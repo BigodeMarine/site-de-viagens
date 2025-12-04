@@ -1,9 +1,16 @@
+:root {
+  --primary: #f30000;
+  --text-dark: #333;
+  --text-medium: #555;
+  --light-bg: #f8f9fa;
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  color: #333;
+  color: var(--text-dark);
   background-color: #f0f8ff; 
   background-image: linear-gradient(to bottom, #e6f7ff, #039aff);
   background-repeat: no-repeat;

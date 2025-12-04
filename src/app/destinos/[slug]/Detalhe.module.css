@@ -11,7 +11,7 @@
   font-size: 2.8rem;
   margin-bottom: 1.5rem;
   text-align: center;
-  color: #333;
+  color: var(--text-dark);
 }
 
 .imageWrapper {
@@ -24,14 +24,14 @@
 .description {
   font-size: 1.1rem;
   line-height: 1.7;
-  color: #555;
+  color: var(--text-medium);
   margin-bottom: 2rem;
 }
 
 .subtitle {
   font-size: 1.8rem;
-  color: #333;
-  border-bottom: 2px solid #f30000;
+  color: var(--text-dark);
+  border-bottom: 2px solid var(--primary);
   padding-bottom: 0.5rem;
   margin-bottom: 1.5rem;
 }
@@ -42,8 +42,8 @@
 }
 
 .attractionItem {
-  background-color: #f8f9fa;
-  border-left: 4px solid #f30000;
+  background-color: var(--light-bg);
+  border-left: 4px solid var(--primary);
   padding: 0.8rem 1rem;
   margin-bottom: 0.5rem;
   border-radius: 0 4px 4px 0;

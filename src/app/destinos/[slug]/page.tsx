@@ -1,4 +1,4 @@
-import { destinos } from '../page';
+import { destinos } from '@/data/destinos';
 import { notFound } from 'next/navigation';
 import Image from 'next/image';
 import styles from './Detalhe.module.css';
@@ -9,7 +9,8 @@ export async function generateStaticParams() {
   }));
 }
 
-export default async function DestinoDetalhePage({ params }: { params: { slug: string } }) {
+export default async function DestinoDetalhePage(props: { params: Promise<{ slug: string }> }) {
+  const params = await props.params;
   const destino = destinos.find(d => d.slug === params.slug);
 
   if (!destino) {

@@ -13,7 +13,7 @@
 .title {
   font-size: 3rem;
   margin-bottom: 1rem;
-  color: #333;
+  color: var(--text-dark);
 }
 
 .description {
@@ -25,7 +25,7 @@
 .link {
   display: inline-block;
   padding: 0.8rem 1.5rem;
-  background-color: #f30000;
+  background-color: var(--text-dark);
   color: white;
   text-decoration: none;
   border-radius: 5px;

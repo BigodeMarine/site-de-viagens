@@ -23,7 +23,7 @@
 
 .nome {
   font-size: 1.2rem;
-  color: #333;
+  color: var(--text-dark);
   margin: 0;
 }
 

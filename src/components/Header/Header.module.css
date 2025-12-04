@@ -1,5 +1,5 @@
 .header {
-  background-color: #f70b0b;
+  background-color: #0a3d62;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   padding: 1rem 0;
 }
@@ -31,7 +31,7 @@
 .navLink {
   text-decoration: none;
   color: #ffffff;
-  font-weight: 500;
+  font-weight: 600;
   transition: color 0.3s ease;
 }
 
