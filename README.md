@@ -25,5 +25,7 @@ Este projeto foi desenvolvido como um exercício prático para demonstrar a cria
 -   **Estilização:** CSS Modules  
 
 
-## Problemas identificados:
+## Problemas identificados:  
+
+![lighthouse antes](./public/images/lighthouseantes.png)  
 
