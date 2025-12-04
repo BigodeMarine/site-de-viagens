@@ -29,3 +29,20 @@ Este projeto foi desenvolvido como um exercício prático para demonstrar a cria
 
 ![lighthouse antes](./public/images/lighthouseantes.png)  
 
+-  **Delay de carregamento das páginas   
+-  **Travamentos durantes interações com links e botões  
+-  **Baixo contraste nos links do header (Início, Destinos)
+-  **Imagens em JPG necessitando de conversão para Webp  
+
+
+
+## Após resolução dos problemas:  
+
+![lighthouse depois](./public/images/lighthousedepois.png)  
+
+- **Criei src/data/destinos.ts para organizar o código, permitir reuso dos dados e evitar erros do Next.js ao exportar variáveis dentro de páginas.  
+- **Criei um arquivo central de variáveis CSS, com o seguinte objetivo:  
+- Centralizar estilos que eram repetidos.  
+- Padronizar cores, tipografia e espaçamentos.  
+- Facilitar manutenção e futuras alterações visuais.  
+- **Imagens convertidas para Webp.
