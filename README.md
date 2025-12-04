@@ -1,4 +1,4 @@
-# ✈️ Portal de Viagens  
+# ✈️ Portal de Viagens  /  Atualização do projeto
 
 Um portal simples e moderno para visualização de destinos turísticos, construído com as tecnologias mais recentes do ecossistema React, incluindo Next.js e TypeScript.  
 
@@ -22,4 +22,8 @@ Este projeto foi desenvolvido como um exercício prático para demonstrar a cria
 -   **Framework:** Next.js (com App Router)
 -   **Linguagem:** TypeScript
 -   **Biblioteca de UI:** React
--   **Estilização:** CSS Modules
+-   **Estilização:** CSS Modules  
+
+
+## Problemas identificados:
+
