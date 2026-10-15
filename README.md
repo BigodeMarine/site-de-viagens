@@ -53,12 +53,6 @@ npm run dev
 
 Abra [http://localhost:3000](http://localhost:3000).
 
-Enquanto as alterações estiverem em revisão no pull request, selecione a branch antes de instalar as dependências:
-
-```sh
-git switch codex/visual-verde-novos-destinos
-```
-
 ## Comandos
 
 | Comando | Finalidade |
