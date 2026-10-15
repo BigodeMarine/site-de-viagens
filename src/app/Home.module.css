@@ -1,38 +1,228 @@
-.container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 80vh;
-  text-align: center;
-}
-
-.main {
-  padding: 2rem;
-}
-
-.title {
-  font-size: 3rem;
-  margin-bottom: 1rem;
-  color: var(--text-dark);
-}
-
-.description {
-  font-size: 1.2rem;
-  margin-bottom: 2rem;
-  color: #666;
-}
-
-.link {
-  display: inline-block;
-  padding: 0.8rem 1.5rem;
-  background-color: var(--text-dark);
+.hero {
+  position: relative;
+  min-height: 650px;
   color: white;
-  text-decoration: none;
-  border-radius: 5px;
-  font-weight: bold;
-  transition: background-color 0.3s ease;
+  display: flex;
+  align-items: center;
 }
-
-.link:hover {
-  background-color: #b50000;
+.heroImage {
+  object-fit: cover;
+  object-position: center 48%;
+}
+.shade {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(90deg, #0c2e29d9 0%, #103b3070 58%, #0e32211a),
+    linear-gradient(0deg, #0c2e2980, transparent 30%);
+}
+.heroContent {
+  position: relative;
+  padding: 70px 0 115px;
+}
+.heroContent > .eyebrow {
+  color: #dce6c3;
+}
+.hero h1 {
+  font-size: clamp(44px, 5.4vw, 76px);
+  font-weight: 500;
+  letter-spacing: -3px;
+  line-height: 1.05;
+  margin: 23px 0;
+}
+.hero h1 em {
+  font-family: Georgia, serif;
+  font-weight: 400;
+  color: #d7e7b4;
+}
+.intro {
+  font-size: 15px;
+  line-height: 1.8;
+  color: #e8eee3;
+  margin: 25px 0 30px;
+}
+.heroButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 35px;
+  padding: 16px 23px;
+  background: #e8efcf;
+  color: var(--forest);
+  border-radius: 4px;
+  font-weight: 700;
+  font-size: 13px;
+}
+.heroButton:hover {
+  background: white;
+}
+.caption {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 24px;
+  display: flex;
+  justify-content: space-between;
+  font-size: 11px;
+  letter-spacing: 0.08em;
+}
+.ribbon {
+  background: #dfe9d5;
+}
+.ribbonInner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+  padding-top: 22px;
+  padding-bottom: 22px;
+}
+.ribbonInner > span:first-child {
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+}
+.ribbon p {
+  margin: 0;
+  font-size: 13px;
+}
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+.experiences {
+  background: #e7efdf;
+  padding: 75px 0;
+}
+.sectionIntro {
+  font-size: 13px;
+  color: var(--text-medium);
+  margin: 0;
+}
+.experienceGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+  border: 1px solid #bdcdb7;
+  border-radius: 6px;
+  overflow: hidden;
+}
+.experience {
+  position: relative;
+  padding: 28px;
+  border-right: 1px solid #bdcdb7;
+  transition: background 0.2s;
+}
+.experience:last-child {
+  border: 0;
+}
+.experience:hover {
+  background: #d6e4cc;
+}
+.experience > div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 10px;
+}
+.icon {
+  font-size: 32px;
+}
+.experience h3 {
+  font-size: 25px;
+  margin-top: 25px;
+  margin-bottom: 12px;
+}
+.experience p {
+  font-size: 12px;
+  max-width: 165px;
+  color: var(--text-medium);
+  margin-bottom: 30px;
+}
+.expArrow {
+  position: absolute;
+  right: 25px;
+  bottom: 20px;
+}
+.story {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 410px;
+  border-radius: 8px;
+  overflow: hidden;
+  background: #ecf1e4;
+}
+.storyImage {
+  position: relative;
+  min-height: 300px;
+}
+.storyText {
+  padding: 50px;
+}
+.storyText h2 {
+  font-size: 38px;
+}
+.storyText > p:not(:first-child) {
+  font-size: 14px;
+  color: var(--text-medium);
+  margin-bottom: 25px;
+}
+@media (max-width: 900px) {
+  .experienceGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .experience:nth-child(2) {
+    border-right: 0;
+  }
+  .experience:nth-child(-n + 2) {
+    border-bottom: 1px solid #bdcdb7;
+  }
+  .grid {
+    gap: 15px;
+  }
+  .storyText {
+    padding: 30px;
+  }
+  .storyText h2 {
+    font-size: 30px;
+  }
+}
+@media (max-width: 650px) {
+  .hero {
+    min-height: 620px;
+  }
+  .hero h1 {
+    letter-spacing: -2px;
+  }
+  .heroContent {
+    padding-top: 55px;
+  }
+  .heroImage {
+    object-position: 65% center;
+  }
+  .ribbonInner {
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .ribbonInner > span:last-child {
+    display: none;
+  }
+  .grid {
+    grid-template-columns: 1fr;
+  }
+  .experience {
+    padding: 20px;
+  }
+  .experienceGrid {
+    grid-template-columns: 1fr 1fr;
+  }
+  .story {
+    grid-template-columns: 1fr;
+  }
+  .caption {
+    font-size: 9px;
+  }
+  .storyText {
+    padding: 30px 24px;
+  }
 }
