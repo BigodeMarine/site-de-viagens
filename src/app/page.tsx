@@ -127,8 +127,8 @@ export default function HomePage() {
         <div className={styles.story}>
           <div className={styles.storyImage}>
             <Image
-              src="/images/sydney.webp"
-              alt="Sydney Opera House à beira do porto"
+              src={destinos[6].imagem}
+              alt="Dunas e lagoas dos Lençóis Maranhenses"
               fill
               sizes="(max-width:700px) 100vw, 50vw"
               style={{ objectFit: "cover" }}
@@ -142,14 +142,14 @@ export default function HomePage() {
               não cabem na mala.
             </h2>
             <p>
-              Dos parques de Orlando às paisagens de Utah, descubra destinos nos
-              Estados Unidos que despertam a curiosidade de todas as gerações.
+              Das dunas dos Lençóis Maranhenses às Cataratas do Iguaçu, descubra
+              destinos brasileiros que despertam a curiosidade de todas as gerações.
             </p>
             <Link
-              href="/destinos?regiao=América%20do%20Norte"
+              href="/destinos?regiao=América%20do%20Sul"
               className="button"
             >
-              Descubra os destinos nos EUA <span aria-hidden="true">↗</span>
+              Descubra os destinos no Brasil <span aria-hidden="true">↗</span>
             </Link>
           </div>
         </div>
