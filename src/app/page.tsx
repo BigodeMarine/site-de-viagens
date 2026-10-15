@@ -9,7 +9,7 @@ export default function HomePage() {
       <section className={styles.hero}>
         <Image
           src="/images/rio.webp"
-          alt="Montanhas e litoral do Rio de Janeiro"
+          alt="Pão de Açúcar e bondinho no Rio de Janeiro"
           fill
           priority
           sizes="100vw"
@@ -31,19 +31,18 @@ export default function HomePage() {
             Encontre inspiração para a sua próxima viagem.
           </p>
           <Link href="/destinos" className={styles.heroButton}>
-            Encontre seu próximo destino <span aria-hidden="true">↗</span>
+            Encontre seu próximo destino
           </Link>
         </div>
         <div className={`wrap ${styles.caption}`}>
           <span>22°54′ S · 43°12′ O</span>
-          <Link href="/destinos/rio-de-janeiro">Rio de Janeiro, Brasil ↗</Link>
+          <Link href="/destinos/rio-de-janeiro">Rio de Janeiro, Brasil </Link>
         </div>
       </section>
       <div className={styles.ribbon}>
         <div className={`wrap ${styles.ribbonInner}`}>
           <span>UM MUNDO DE POSSIBILIDADES</span>
           <p>Da sua primeira descoberta à próxima grande aventura.</p>
-          <span aria-hidden="true">↓</span>
         </div>
       </div>
       <section className="wrap section">
@@ -53,7 +52,7 @@ export default function HomePage() {
             <h2>Lugares que ficam com você.</h2>
           </div>
           <Link href="/destinos" className="textLink">
-            Explore todos os destinos ↗
+            Explore todos os destinos
           </Link>
         </div>
         <div className={styles.grid}>
@@ -115,9 +114,6 @@ export default function HomePage() {
                 </div>
                 <h3>{c.name}</h3>
                 <p>{c.text}</p>
-                <span className={styles.expArrow} aria-hidden="true">
-                  ↗
-                </span>
               </Link>
             ))}
           </div>
@@ -143,13 +139,11 @@ export default function HomePage() {
             </h2>
             <p>
               Das dunas dos Lençóis Maranhenses às Cataratas do Iguaçu, descubra
-              destinos brasileiros que despertam a curiosidade de todas as gerações.
+              destinos brasileiros que despertam a curiosidade de todas as
+              gerações.
             </p>
-            <Link
-              href="/destinos?regiao=América%20do%20Sul"
-              className="button"
-            >
-              Descubra os destinos no Brasil <span aria-hidden="true">↗</span>
+            <Link href="/destinos?regiao=América%20do%20Sul" className="button">
+              Descubra os destinos no Brasil
             </Link>
           </div>
         </div>

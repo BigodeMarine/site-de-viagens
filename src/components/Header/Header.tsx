@@ -8,9 +8,6 @@ export default function Header() {
     <header className={styles.header}>
       <div className={`wrap ${styles.inner}`}>
         <Link href="/" className={styles.logo}>
-          <span className={styles.mark} aria-hidden="true">
-            ↗
-          </span>
           <span>
             portal de viagens
             <span className={styles.tagline}>O MUNDO ESPERA POR VOCÊ</span>
@@ -31,7 +28,7 @@ export default function Header() {
           </Link>
         </nav>
         <Link href="/destinos" className={styles.cta}>
-          Explore o mundo <span aria-hidden="true">↗</span>
+          Explore o mundo
         </Link>
       </div>
     </header>

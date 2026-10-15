@@ -36,7 +36,7 @@
   color: #d7e7b4;
 }
 .intro {
-  font-size: 15px;
+  font-size: 1.125rem;
   line-height: 1.8;
   color: #e8eee3;
   margin: 25px 0 30px;
@@ -50,7 +50,7 @@
   color: var(--forest);
   border-radius: 4px;
   font-weight: 700;
-  font-size: 13px;
+  font-size: 1.125rem;
 }
 .heroButton:hover {
   background: white;
@@ -62,7 +62,7 @@
   bottom: 24px;
   display: flex;
   justify-content: space-between;
-  font-size: 11px;
+  font-size: 0.875rem;
   letter-spacing: 0.08em;
 }
 .ribbon {
@@ -77,13 +77,13 @@
   padding-bottom: 22px;
 }
 .ribbonInner > span:first-child {
-  font-size: 9px;
+  font-size: 0.875rem;
   font-weight: 700;
   letter-spacing: 0.14em;
 }
 .ribbon p {
   margin: 0;
-  font-size: 13px;
+  font-size: 1.125rem;
 }
 .grid {
   display: grid;
@@ -95,7 +95,7 @@
   padding: 75px 0;
 }
 .sectionIntro {
-  font-size: 13px;
+  font-size: 1.125rem;
   color: var(--text-medium);
   margin: 0;
 }
@@ -123,18 +123,18 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  font-size: 10px;
+  font-size: 0.875rem;
 }
 .icon {
-  font-size: 32px;
+  font-size: 2rem;
 }
 .experience h3 {
-  font-size: 25px;
+  font-size: 1.5625rem;
   margin-top: 25px;
   margin-bottom: 12px;
 }
 .experience p {
-  font-size: 12px;
+  font-size: 0.875rem;
   max-width: 165px;
   color: var(--text-medium);
   margin-bottom: 30px;
@@ -160,10 +160,10 @@
   padding: 50px;
 }
 .storyText h2 {
-  font-size: 38px;
+  font-size: 2.375rem;
 }
 .storyText > p:not(:first-child) {
-  font-size: 14px;
+  font-size: 1.125rem;
   color: var(--text-medium);
   margin-bottom: 25px;
 }
@@ -184,7 +184,7 @@
     padding: 30px;
   }
   .storyText h2 {
-    font-size: 30px;
+    font-size: 1.875rem;
   }
 }
 @media (max-width: 650px) {
@@ -220,9 +220,130 @@
     grid-template-columns: 1fr;
   }
   .caption {
-    font-size: 9px;
+    font-size: 0.875rem;
   }
   .storyText {
     padding: 30px 24px;
+  }
+}
+
+.hero {
+  min-height: clamp(40rem, 78vh, 55rem);
+}
+.heroContent {
+  padding-block: 5rem 8rem;
+}
+.hero h1 {
+  font-size: clamp(2.75rem, 5.5vw, 5.5rem);
+  letter-spacing: -0.04em;
+}
+.intro {
+  font-size: clamp(1.125rem, 1.5vw, 1.5rem);
+  max-width: 42rem;
+}
+.heroButton {
+  font-size: 1rem;
+  min-height: 3rem;
+}
+.caption {
+  font-size: 0.9rem;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+.ribbonInner {
+  flex-wrap: wrap;
+}
+.ribbonInner > span:first-child {
+  font-size: 0.9rem;
+}
+.ribbon p,
+.sectionIntro {
+  font-size: 1.125rem;
+}
+.experience {
+  min-width: 0;
+}
+.experience h3 {
+  font-size: clamp(1.5rem, 2.5vw, 2rem);
+}
+.experience p {
+  font-size: 1rem;
+  max-width: none;
+  margin-bottom: 0;
+}
+.experience > div {
+  font-size: 0.9rem;
+}
+.story {
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+}
+.storyText {
+  padding: clamp(1.5rem, 4vw, 3.5rem);
+  min-width: 0;
+}
+.storyText h2 {
+  font-size: clamp(2rem, 3vw, 3rem);
+}
+.storyText > p:not(:first-child) {
+  font-size: 1.125rem;
+}
+.grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+@media (max-width: 70rem) {
+  .grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .experienceGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .experience:nth-child(2) {
+    border-right: 0;
+  }
+  .experience:nth-child(-n + 2) {
+    border-bottom: 1px solid #bdcdb7;
+  }
+}
+@media (max-width: 48rem) {
+  .story {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .heroContent {
+    padding-top: 3.5rem;
+  }
+  .hero h1 br {
+    display: none;
+  }
+  .hero h1 {
+    max-width: 38rem;
+  }
+  .hero h1 em {
+    display: block;
+  }
+}
+@media (max-width: 40rem) {
+  .grid,
+  .experienceGrid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .experience {
+    border-right: 0;
+    border-bottom: 1px solid #bdcdb7;
+  }
+  .caption {
+    font-size: 0.875rem;
+  }
+  .heroButton {
+    width: 100%;
+  }
+  .intro br,
+  .storyText h2 br {
+    display: none;
+  }
+  .heroImage {
+    object-position: 55% center;
+  }
+  .shade {
+    background: linear-gradient(90deg, #0c2e29dc, #103b3088);
   }
 }
