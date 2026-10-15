@@ -1,30 +1,39 @@
-import Link from 'next/link';
-import styles from './Header.module.css';
-
-const Header: React.FC = () => {
+"use client";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import styles from "./Header.module.css";
+export default function Header() {
+  const path = usePathname();
   return (
     <header className={styles.header}>
-      <div className={styles.container}>
+      <div className={`wrap ${styles.inner}`}>
         <Link href="/" className={styles.logo}>
-          Portal de Viagens
+          <span className={styles.mark} aria-hidden="true">
+            ↗
+          </span>
+          <span>
+            portal de viagens
+            <span className={styles.tagline}>O MUNDO ESPERA POR VOCÊ</span>
+          </span>
         </Link>
-        <nav>
-          <ul className={styles.navList}>
-            <li>
-              <Link href="/" className={styles.navLink}>
-                Início
-              </Link>
-            </li>
-            <li>
-              <Link href="/destinos" className={styles.navLink}>
-                Destinos
-              </Link>
-            </li>
-          </ul>
+        <nav aria-label="Navegação principal">
+          <Link href="/" aria-current={path === "/" ? "page" : undefined}>
+            Início
+          </Link>
+          <Link
+            href="/destinos"
+            aria-current={path.startsWith("/destinos") ? "page" : undefined}
+          >
+            Destinos
+          </Link>
+          <Link href="/#experiencias" className={styles.experiences}>
+            Experiências
+          </Link>
         </nav>
+        <Link href="/destinos" className={styles.cta}>
+          Explore o mundo <span aria-hidden="true">↗</span>
+        </Link>
       </div>
     </header>
   );
 }
-
-export default Header;
