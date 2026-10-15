@@ -132,6 +132,8 @@ A referência editorial para a atualização é o artigo [Experiências familiar
 - A fotografia dos Lençóis Maranhenses é de Jeferson Stader / MTur, publicada pelo [Ministério do Turismo](https://www.gov.br/turismo/pt-br/lencois-maranhenses-paisagem-unica-reconhecida-pela-unesco).
 - Os créditos e links para as fontes estão registrados no catálogo e apresentados nas páginas individuais.
 - O Visit the USA permanece apenas como referência visual; o catálogo não inclui destinos dos Estados Unidos.
+- As fotografias de Orlando, Monterey, Moab e Washington, D.C. são carregadas de URLs externas do Visit the USA.
+- Os créditos estão registrados no catálogo e apresentados nas páginas individuais, incluindo SeeMonterey.com e Adam Clark quando indicados na referência.
 - O carregamento dessas fotografias depende da disponibilidade da origem externa.
 
 ## Validação da atualização
