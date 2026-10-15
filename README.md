@@ -124,7 +124,7 @@ A referência editorial para a atualização é o artigo [Experiências familiar
 - Todas as fotos de destinos são servidas de arquivos locais em `public/images/`, incluindo os cinco destinos brasileiros. Não há dependência de hotlinks externos para exibir o catálogo.
 - A foto do Rio foi substituída por uma imagem de 1920 × 1271 px e convertida para WebP sem ampliar artificialmente o arquivo.
 - Fontes dos arquivos brasileiros: [projeto-rio](https://github.com/lucasxcampos/projeto-rio), [portal-turistico](https://github.com/Gui64math64/portal-turistico) e [local-turistico-lencois-maranhenses](https://github.com/LuisAndree/local-turistico-lencois-maranhenses). Os links de origem estão disponíveis nas páginas individuais.
-- O Visit the USA permanece como referência visual. A escala tipográfica foi revista a partir do [portfólio de Edson Garcia](https://edson-garcia-portfolio.vercel.app), com controles em 1rem, texto principal entre 1.125rem e 1.5rem e títulos fluidos.
+- O Visit the USA permanece como referência visual. A escala tipográfica foi revista com controles em 1rem, texto principal entre 1.125rem e 1.5rem e títulos fluidos.
 - Os símbolos de seta foram removidos de todas as páginas e componentes.
 - Grades, navegação, textos e imagens se adaptam à largura disponível, com colunas únicas em telas pequenas e limites de leitura em monitores grandes.
 
@@ -150,3 +150,5 @@ Depois:
 ![Relatório Lighthouse após as melhorias históricas](./public/images/lighthousedepois.png)
 
 Na etapa anterior, os dados foram centralizados em `src/data/destinos.ts`, os estilos compartilhados foram organizados em variáveis CSS e as imagens dos destinos originais foram convertidas para WebP.
+
+<p align="center">Refatorado com ☕, Typescript, e um pouco de Férias.</p>  
