@@ -53,11 +53,11 @@ export default async function DestinoDetalhePage({ params }: Props) {
             <p className={styles.credit}>
               Foto: {d.credito}.{" "}
               <a
-                href="https://www.visittheusa.com/pt-br/trip/amazing-family-experiences-across-the-usa/"
+                href={d.fonteImagem}
                 target="_blank"
                 rel="noreferrer"
               >
-                Fonte e inspiração ↗
+                Fonte da imagem ↗
               </a>
             </p>
           )}

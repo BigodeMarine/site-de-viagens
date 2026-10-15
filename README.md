@@ -9,7 +9,7 @@ O projeto mantém sua estrutura de componentes reutilizáveis e recebe uma apres
 - **Página inicial:** fotografia em destaque, destinos selecionados e acesso às experiências.
 - **Catálogo de destinos:** busca por nome ou região, sem diferenciação de acentos ou maiúsculas.
 - **Filtros por experiência:** natureza, cultura, família e praia, com contagem dos resultados.
-- **Filtro regional:** links da página inicial permitem explorar os destinos dos EUA.
+- **Filtro regional:** links da página inicial permitem explorar os destinos brasileiros.
 - **Estado vazio:** mensagem e botão para limpar os filtros quando não há resultados.
 - **Páginas individuais:** descrição, atrações, créditos das novas imagens e outros destinos para explorar.
 - **Navegação:** cabeçalho com indicação da página ativa, rodapé e links internos com `next/link`.
@@ -25,10 +25,10 @@ O projeto mantém sua estrutura de componentes reutilizáveis e recebe uma apres
 | Tóquio, Japão | Ásia | Cultura |
 | Rio de Janeiro, Brasil | América do Sul | Natureza |
 | Sydney, Austrália | Oceania | Praia |
-| Orlando, EUA | América do Norte | Família |
-| Monterey, EUA | América do Norte | Praia |
-| Moab, EUA | América do Norte | Natureza |
-| Washington, D.C., EUA | América do Norte | Cultura |
+| Foz do Iguaçu, Brasil | América do Sul | Família |
+| Fernando de Noronha, Brasil | América do Sul | Praia |
+| Lençóis Maranhenses, Brasil | América do Sul | Natureza |
+| Salvador, Brasil | América do Sul | Cultura |
 
 As rotas dos destinos originais foram preservadas, incluindo `/destinos/tokio`.
 
@@ -117,7 +117,7 @@ public/
 
 ## Adicionar um destino
 
-Adicione um objeto ao array `destinos` em `src/data/destinos.ts`, seguindo a interface `Destino`. Informe um `id` e um `slug` únicos, nome, região, categoria, imagem, resumo, descrição e atrações. O campo `credito` é opcional.
+Adicione um objeto ao array `destinos` em `src/data/destinos.ts`, seguindo a interface `Destino`. Informe um `id` e um `slug` únicos, nome, região, categoria, imagem, resumo, descrição e atrações. Os campos `credito` e `fonteImagem` são opcionais e permitem atribuir a fotografia e apontar para sua página de origem.
 
 Use uma das categorias existentes para que o destino apareça no filtro correspondente: `Natureza`, `Cultura`, `Família` ou `Praia`. Para adicionar outra categoria, atualize também a lista em `DestinationExplorer.tsx`.
 
@@ -128,6 +128,10 @@ Imagens locais devem ficar em `public/images/` e ser referenciadas como `/images
 A referência editorial para a atualização é o artigo [Experiências familiares incríveis por todos os EUA, do Visit the USA](https://www.visittheusa.com/pt-br/trip/amazing-family-experiences-across-the-usa/).
 
 - As imagens dos quatro destinos originais permanecem em `public/images/`.
+- As fotografias de Foz do Iguaçu, Fernando de Noronha e Salvador são carregadas do [Visit Brasil / Embratur](https://www.visitbrasil.com/).
+- A fotografia dos Lençóis Maranhenses é de Jeferson Stader / MTur, publicada pelo [Ministério do Turismo](https://www.gov.br/turismo/pt-br/lencois-maranhenses-paisagem-unica-reconhecida-pela-unesco).
+- Os créditos e links para as fontes estão registrados no catálogo e apresentados nas páginas individuais.
+- O Visit the USA permanece apenas como referência visual; o catálogo não inclui destinos dos Estados Unidos.
 - As fotografias de Orlando, Monterey, Moab e Washington, D.C. são carregadas de URLs externas do Visit the USA.
 - Os créditos estão registrados no catálogo e apresentados nas páginas individuais, incluindo SeeMonterey.com e Adam Clark quando indicados na referência.
 - O carregamento dessas fotografias depende da disponibilidade da origem externa.

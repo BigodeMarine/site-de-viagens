@@ -4,6 +4,7 @@ export interface Destino {
   regiao: string;
   resumo: string;
   credito?: string;
+  fonteImagem?: string;
   nome: string;
   imagem: string;
   slug: string;
@@ -64,76 +65,71 @@ export const destinos: Destino[] = [
     atracoes: ["Sydney Opera House", "Harbour Bridge", "Bondi Beach"],
   },
   {
-    id: 5,
-    nome: "Orlando, EUA",
-    slug: "orlando",
-    credito: "Visit the USA",
-    categoria: "Família",
-    regiao: "América do Norte",
-    imagem:
-      "https://www.visittheusa.com/wp-content/uploads/2025/06/BeautifulDestinations_UnitedStories_PartnerPrograms_Disney_ImageSelect12.png",
-    resumo: "Parques temáticos e descobertas para compartilhar em família.",
-    descricao:
-      "Orlando combina parques temáticos com lagos, jardins e experiências ao ar livre na Flórida. Intercale os dias de atrações com passeios mais tranquilos para aproveitar a viagem em família.",
-    atracoes: [
-      "Walt Disney World Resort",
-      "Universal Orlando Resort",
-      "Lake Eola Park",
-    ],
+    "id": 5,
+    "nome": "Foz do Iguaçu, Brasil",
+    "slug": "foz-do-iguacu",
+    "credito": "Visit Brasil / Embratur",
+    "fonteImagem": "https://www.visitbrasil.com/location/foz-do-iguacu-pt",
+    "categoria": "Família",
+    "regiao": "América do Sul",
+    "imagem": "https://www.visitbrasil.com/assets/uploads/2024/02/1-17.jpg",
+    "resumo": "Cataratas, aves e descobertas para compartilhar em família.",
+    "descricao": "Na fronteira entre Brasil, Argentina e Paraguai, Foz do Iguaçu combina paisagens naturais com encontros culturais. As passarelas das Cataratas, o Parque das Aves e o Marco das Três Fronteiras convidam a explorar a região juntos.",
+    "atracoes": [
+      "Cataratas do Iguaçu",
+      "Parque das Aves",
+      "Marco das Três Fronteiras"
+    ]
   },
   {
-    id: 6,
-    nome: "Monterey, EUA",
-    slug: "monterey",
-    credito: "SeeMonterey.com / Visit the USA",
-    categoria: "Praia",
-    regiao: "América do Norte",
-    imagem:
-      "https://www.visittheusa.com/wp-content/uploads/2025/06/CA_See-Monterey_1024_MBA_SeeMonterey_Web72DPI.png",
-    resumo: "Vida marinha e paisagens para desacelerar na costa da Califórnia.",
-    descricao:
-      "Na costa central da Califórnia, Monterey convida a explorar a vida marinha, caminhar à beira do Pacífico e conhecer a histórica Cannery Row.",
-    atracoes: [
-      "Monterey Bay Aquarium",
-      "Cannery Row",
-      "Monterey Bay Coastal Recreation Trail",
-    ],
+    "id": 6,
+    "nome": "Fernando de Noronha, Brasil",
+    "slug": "fernando-de-noronha",
+    "credito": "Visit Brasil / Embratur",
+    "fonteImagem": "https://www.visitbrasil.com/location/fernando-de-noronha-pt/",
+    "categoria": "Praia",
+    "regiao": "América do Sul",
+    "imagem": "https://www.visitbrasil.com/assets/uploads/2024/02/1-7.jpg",
+    "resumo": "Águas transparentes e vida marinha no horizonte de Pernambuco.",
+    "descricao": "Fernando de Noronha reúne praias, mirantes e paisagens protegidas no Atlântico. Conheça a Baía do Sancho, contemple o Morro Dois Irmãos e descubra a história da Vila dos Remédios, respeitando as regras de visitação e conservação do arquipélago.",
+    "atracoes": [
+      "Baía do Sancho",
+      "Mirante do Morro Dois Irmãos",
+      "Vila dos Remédios"
+    ]
   },
   {
-    id: 7,
-    nome: "Moab, EUA",
-    slug: "moab",
-    credito: "Adam Clark / Visit the USA",
-    categoria: "Natureza",
-    regiao: "América do Norte",
-    imagem:
-      "https://www.visittheusa.com/wp-content/uploads/2025/06/UT_UTOT_1024_Arches_In-Love-In-Utah_Clark-Adam_2022_Utah_Fall_2022_AdamClark_0680_25January2023.png",
-    resumo:
-      "Estradas panorâmicas e aventuras entre as rochas vermelhas de Utah.",
-    descricao:
-      "Moab é uma base para conhecer as paisagens de arenito de Utah. Trilhas e estradas panorâmicas revelam arcos naturais, cânions e a imensidão do deserto.",
-    atracoes: [
-      "Arches National Park",
-      "Canyonlands National Park",
-      "Dead Horse Point State Park",
-    ],
+    "id": 7,
+    "nome": "Lençóis Maranhenses, Brasil",
+    "slug": "lencois-maranhenses",
+    "credito": "Jeferson Stader / MTur",
+    "fonteImagem": "https://www.gov.br/turismo/pt-br/lencois-maranhenses-paisagem-unica-reconhecida-pela-unesco",
+    "categoria": "Natureza",
+    "regiao": "América do Sul",
+    "imagem": "https://www.gov.br/turismo/pt-br/lencois-maranhenses-paisagem-unica-reconhecida-pela-unesco/%40%40images/image-1150-ffcd300dc1a89a7b8442a134fbceaec4.png",
+    "resumo": "Dunas brancas e lagoas que revelam um Brasil surpreendente.",
+    "descricao": "No Maranhão, dunas de areia branca e lagoas formadas pelas chuvas criam uma paisagem em constante transformação. Barreirinhas, Santo Amaro e Atins são pontos de partida para conhecer os Lençóis Maranhenses. As condições das lagoas variam ao longo do ano; planeje os passeios com os condutores e consulte as orientações do parque.",
+    "atracoes": [
+      "Circuito da Lagoa Bonita",
+      "Lagoas de Santo Amaro",
+      "Atins"
+    ]
   },
   {
-    id: 8,
-    nome: "Washington, D.C., EUA",
-    slug: "washington-dc",
-    credito: "Visit the USA",
-    categoria: "Cultura",
-    regiao: "América do Norte",
-    imagem:
-      "https://www.visittheusa.com/wp-content/uploads/2025/06/FY24_Washington-DC_Lincoln-Memorial__A6A8503_CC_JPG.png",
-    resumo: "Museus, monumentos e histórias que aproximam gerações.",
-    descricao:
-      "A capital dos Estados Unidos reúne monumentos, jardins e museus que convidam a descobrir história, ciência e cultura. Reserve tempo para explorar o National Mall a pé.",
-    atracoes: [
-      "Lincoln Memorial",
-      "National Mall",
-      "National Air and Space Museum",
-    ],
+    "id": 8,
+    "nome": "Salvador, Brasil",
+    "slug": "salvador",
+    "credito": "Visit Brasil / Embratur",
+    "fonteImagem": "https://www.visitbrasil.com/location/salvador-pt",
+    "categoria": "Cultura",
+    "regiao": "América do Sul",
+    "imagem": "https://www.visitbrasil.com/assets/uploads/2024/02/17-14.jpg",
+    "resumo": "História, sabores e cultura afro-brasileira à beira da Bahia.",
+    "descricao": "Salvador convida a caminhar pelo Pelourinho, descobrir a herança afro-brasileira e experimentar a culinária baiana. Entre o Centro Histórico e a orla da Barra, arquitetura, música e paisagens do mar fazem parte da experiência.",
+    "atracoes": [
+      "Pelourinho",
+      "Farol da Barra",
+      "Elevador Lacerda"
+    ]
   },
 ];
