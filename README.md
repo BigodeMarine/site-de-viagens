@@ -19,16 +19,16 @@ O projeto mantém sua estrutura de componentes reutilizáveis e recebe uma apres
 
 ## Destinos disponíveis
 
-| Destino | Região | Experiência |
-| --- | --- | --- |
-| Paris, França | Europa | Cultura |
-| Tóquio, Japão | Ásia | Cultura |
-| Rio de Janeiro, Brasil | América do Sul | Natureza |
-| Sydney, Austrália | Oceania | Praia |
-| Foz do Iguaçu, Brasil | América do Sul | Família |
-| Fernando de Noronha, Brasil | América do Sul | Praia |
-| Lençóis Maranhenses, Brasil | América do Sul | Natureza |
-| Salvador, Brasil | América do Sul | Cultura |
+| Destino                     | Região         | Experiência |
+| --------------------------- | -------------- | ----------- |
+| Paris, França               | Europa         | Cultura     |
+| Tóquio, Japão               | Ásia           | Cultura     |
+| Rio de Janeiro, Brasil      | América do Sul | Natureza    |
+| Sydney, Austrália           | Oceania        | Praia       |
+| Foz do Iguaçu, Brasil       | América do Sul | Família     |
+| Fernando de Noronha, Brasil | América do Sul | Praia       |
+| Lençóis Maranhenses, Brasil | América do Sul | Natureza    |
+| Salvador, Brasil            | América do Sul | Cultura     |
 
 As rotas dos destinos originais foram preservadas, incluindo `/destinos/tokio`.
 
@@ -55,12 +55,12 @@ Abra [http://localhost:3000](http://localhost:3000).
 
 ## Comandos
 
-| Comando | Finalidade |
-| --- | --- |
-| `npm ci` | Instala as dependências conforme o arquivo de lock |
-| `npm run dev` | Inicia o servidor de desenvolvimento |
+| Comando         | Finalidade                                             |
+| --------------- | ------------------------------------------------------ |
+| `npm ci`        | Instala as dependências conforme o arquivo de lock     |
+| `npm run dev`   | Inicia o servidor de desenvolvimento                   |
 | `npm run build` | Compila, valida tipos e gera o site estático em `out/` |
-| `npm run lint` | Executa o ESLint |
+| `npm run lint`  | Executa o ESLint                                       |
 
 O script `npm start` original utiliza `next start`, que não serve a configuração atual de exportação estática. Para visualizar a versão de produção, use um servidor estático:
 
@@ -121,19 +121,21 @@ Imagens locais devem ficar em `public/images/` e ser referenciadas como `/images
 
 A referência editorial para a atualização é o artigo [Experiências familiares incríveis por todos os EUA, do Visit the USA](https://www.visittheusa.com/pt-br/trip/amazing-family-experiences-across-the-usa/).
 
-- As imagens dos quatro destinos originais permanecem em `public/images/`.
-- As fotografias de Foz do Iguaçu, Fernando de Noronha e Salvador são carregadas do [Visit Brasil / Embratur](https://www.visitbrasil.com/).
-- A fotografia dos Lençóis Maranhenses é de Jeferson Stader / MTur, publicada pelo [Ministério do Turismo](https://www.gov.br/turismo/pt-br/lencois-maranhenses-paisagem-unica-reconhecida-pela-unesco).
-- Os créditos e links para as fontes estão registrados no catálogo e apresentados nas páginas individuais.
-- O Visit the USA permanece apenas como referência visual; o catálogo não inclui destinos dos Estados Unidos.
-- O carregamento dessas fotografias depende da disponibilidade da origem externa.
+- Todas as fotos de destinos são servidas de arquivos locais em `public/images/`, incluindo os cinco destinos brasileiros. Não há dependência de hotlinks externos para exibir o catálogo.
+- A foto do Rio foi substituída por uma imagem de 1920 × 1271 px e convertida para WebP sem ampliar artificialmente o arquivo.
+- Fontes dos arquivos brasileiros: [projeto-rio](https://github.com/lucasxcampos/projeto-rio), [portal-turistico](https://github.com/Gui64math64/portal-turistico) e [local-turistico-lencois-maranhenses](https://github.com/LuisAndree/local-turistico-lencois-maranhenses). Os links de origem estão disponíveis nas páginas individuais.
+- O Visit the USA permanece como referência visual. A escala tipográfica foi revista a partir do [portfólio de Edson Garcia](https://edson-garcia-portfolio.vercel.app), com controles em 1rem, texto principal entre 1.125rem e 1.5rem e títulos fluidos.
+- Os símbolos de seta foram removidos de todas as páginas e componentes.
+- Grades, navegação, textos e imagens se adaptam à largura disponível, com colunas únicas em telas pequenas e limites de leitura em monitores grandes.
 
 ## Validação da atualização
 
 - `npm run build` concluído com sucesso, incluindo checagem de TypeScript e geração estática.
 - `git diff --check` sem erros.
 - Links internos dos HTMLs exportados verificados, sem páginas de destino ausentes.
-- Revisão visual e testes de interação em navegador ainda não realizados.
+- Verificação em Chromium de 36 combinações de página e largura (320 a 2560 px), sem rolagem horizontal, fotos quebradas ou símbolos de seta.
+- Busca sem acentos, filtro por experiência, estado vazio e limpeza de filtros testados em navegador.
+- Leitura com texto ampliado a 200% verificada em 1280 px, sem rolagem horizontal.
 
 ### Histórico de desempenho
 

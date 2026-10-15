@@ -6,13 +6,13 @@ export default function Footer() {
       <div className={`wrap ${styles.top}`}>
         <div>
           <Link href="/" className={styles.brand}>
-            ↗ portal de viagens
+            portal de viagens
           </Link>
           <p>Mais que lugares. Novas histórias para viver.</p>
         </div>
         <nav aria-label="Navegação do rodapé">
-          <Link href="/destinos">Todos os destinos ↗</Link>
-          <Link href="/#experiencias">Encontre sua experiência ↗</Link>
+          <Link href="/destinos">Todos os destinos </Link>
+          <Link href="/#experiencias">Encontre sua experiência </Link>
         </nav>
       </div>
       <div className={`wrap ${styles.bottom}`}>

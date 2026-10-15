@@ -14,17 +14,12 @@ export default function CardDestino({ destino }: { destino: Destino }) {
           style={{ objectFit: "cover" }}
         />
         <span className={styles.badge}>{destino.categoria}</span>
-        <span className={styles.arrow} aria-hidden="true">
-          ↗
-        </span>
       </div>
       <div className={styles.content}>
         <p className="eyebrow">{destino.regiao}</p>
         <h3>{destino.nome}</h3>
         <p className={styles.summary}>{destino.resumo}</p>
-        <span className={styles.more}>
-          Descubra o destino <span aria-hidden="true">→</span>
-        </span>
+        <span className={styles.more}>Descubra o destino</span>
       </div>
     </Link>
   );

@@ -29,7 +29,7 @@
   top: 16px;
   left: 16px;
   background: #fafbf5ed;
-  font-size: 10px;
+  font-size: 0.875rem;
   font-weight: 700;
   padding: 6px 12px;
   border-radius: 30px;
@@ -44,22 +44,22 @@
   display: grid;
   place-items: center;
   background: #fafbf5;
-  font-size: 22px;
+  font-size: 1.375rem;
 }
 .content {
   padding: 23px;
 }
 .content > p:first-child {
-  font-size: 9px;
+  font-size: 0.875rem;
   color: var(--text-medium);
   margin-bottom: 12px;
 }
 .content h3 {
-  font-size: 25px;
+  font-size: 1.5625rem;
   margin-bottom: 12px;
 }
 .summary {
-  font-size: 13px;
+  font-size: 1.125rem;
   color: var(--text-medium);
   min-height: 42px;
   margin-bottom: 22px;
@@ -70,5 +70,37 @@
   border-top: 1px solid var(--line);
   padding-top: 15px;
   font-weight: 700;
-  font-size: 11px;
+  font-size: 0.875rem;
+}
+
+.imageWrapper {
+  height: auto;
+  aspect-ratio: 4 / 3;
+}
+.content h3 {
+  font-size: clamp(1.5rem, 2vw, 2rem);
+}
+.content > p:first-child,
+.badge {
+  font-size: 0.875rem;
+}
+.summary {
+  font-size: 1.125rem;
+  min-height: 0;
+}
+.more {
+  font-size: 1rem;
+}
+.card {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.content {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+.more {
+  margin-top: auto;
 }

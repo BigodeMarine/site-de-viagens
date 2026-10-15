@@ -52,12 +52,8 @@ export default async function DestinoDetalhePage({ params }: Props) {
           {d.credito && (
             <p className={styles.credit}>
               Foto: {d.credito}.{" "}
-              <a
-                href={d.fonteImagem}
-                target="_blank"
-                rel="noreferrer"
-              >
-                Fonte da imagem ↗
+              <a href={d.fonteImagem} target="_blank" rel="noreferrer">
+                Fonte da imagem
               </a>
             </p>
           )}
@@ -81,7 +77,7 @@ export default async function DestinoDetalhePage({ params }: Props) {
           </p>
           <p>Deixe espaço no roteiro para as descobertas pelo caminho.</p>
           <Link href="/destinos" className="button">
-            Explore outros destinos ↗
+            Explore outros destinos
           </Link>
         </aside>
       </section>

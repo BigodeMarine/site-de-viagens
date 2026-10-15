@@ -2,7 +2,7 @@
   display: flex;
   gap: 12px;
   flex-wrap: wrap;
-  font-size: 11px;
+  font-size: 0.875rem;
   padding-top: 22px;
   padding-bottom: 22px;
   color: var(--text-medium);
@@ -15,7 +15,7 @@
   height: 490px;
   color: white;
   display: flex;
-  align-items: end;
+  align-items: flex-end;
 }
 .overlay {
   position: absolute;
@@ -31,7 +31,7 @@
   margin-bottom: 18px;
 }
 .title > p:last-child {
-  font-size: 15px;
+  font-size: 1.125rem;
   max-width: 550px;
 }
 .detail {
@@ -40,10 +40,10 @@
   gap: 80px;
 }
 .detail h2 {
-  font-size: 34px;
+  font-size: 2.125rem;
 }
 .description {
-  font-size: 16px;
+  font-size: 1.125rem;
   color: var(--text-medium);
   line-height: 1.9;
   margin-bottom: 45px;
@@ -63,11 +63,11 @@
   padding: 22px 0;
 }
 .attractions span {
-  font-size: 12px;
+  font-size: 0.875rem;
   color: var(--primary);
 }
 .attractions h3 {
-  font-size: 19px;
+  font-size: 1.1875rem;
   font-weight: 500;
   margin: 0;
   letter-spacing: -0.4px;
@@ -80,14 +80,14 @@
   border-radius: 6px;
 }
 .aside h2 {
-  font-size: 29px;
+  font-size: 1.8125rem;
 }
 .aside > p:not(:first-child) {
-  font-size: 14px;
+  font-size: 1.125rem;
   color: var(--text-medium);
 }
 .aside .button {
-  font-size: 12px;
+  font-size: 0.875rem;
   margin-top: 12px;
 }
 .related {
@@ -117,10 +117,74 @@
 }
 
 .credit {
-  font-size: 10px;
+  font-size: 0.875rem;
   color: var(--text-medium);
   margin-bottom: 24px;
 }
 .credit a {
   text-decoration: underline;
+}
+
+.breadcrumb {
+  font-size: 0.9rem;
+}
+.hero {
+  height: auto;
+  min-height: 30rem;
+}
+.title {
+  padding-top: 6rem;
+}
+.title h1 {
+  font-size: clamp(2.5rem, 5vw, 5rem);
+}
+.title > p:last-child {
+  font-size: 1.25rem;
+  max-width: 50rem;
+}
+.detail {
+  grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr);
+  gap: clamp(2rem, 5vw, 5rem);
+}
+.detail h2 {
+  font-size: clamp(2rem, 3vw, 3rem);
+}
+.description {
+  font-size: 1.25rem;
+}
+.attractions h3 {
+  font-size: 1.375rem;
+}
+.attractions span {
+  font-size: 1rem;
+}
+.aside {
+  min-width: 0;
+}
+.aside > p:not(:first-child) {
+  font-size: 1.125rem;
+}
+.aside .button {
+  font-size: 1rem;
+}
+.credit {
+  font-size: 0.875rem;
+}
+.grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+@media (max-width: 60rem) {
+  .detail {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+@media (max-width: 70rem) {
+  .grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media (max-width: 40rem) {
+  .grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
 }

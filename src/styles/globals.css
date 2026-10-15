@@ -62,7 +62,7 @@ main {
   margin: auto;
 }
 .eyebrow {
-  font-size: 12px;
+  font-size: 0.875rem;
   letter-spacing: 0.18em;
   font-weight: 700;
   text-transform: uppercase;
@@ -78,7 +78,7 @@ main {
   border: 1px solid var(--forest);
   border-radius: 4px;
   font-weight: 600;
-  font-size: 14px;
+  font-size: 1.125rem;
   transition: background 0.2s;
 }
 .button:hover {
@@ -90,7 +90,7 @@ main {
 .sectionHeading {
   display: flex;
   justify-content: space-between;
-  align-items: end;
+  align-items: flex-end;
   gap: 24px;
   margin-bottom: 32px;
 }
@@ -99,7 +99,7 @@ main {
   margin-bottom: 0;
 }
 .textLink {
-  font-size: 14px;
+  font-size: 1.125rem;
   font-weight: 700;
   border-bottom: 1px solid;
   padding-bottom: 5px;
@@ -129,5 +129,71 @@ main {
   .sectionHeading {
     align-items: start;
     flex-direction: column;
+  }
+}
+
+/* Fluid reading scale and shared layout safeguards. */
+html {
+  font-size: 100%;
+}
+body {
+  font-size: 1.125rem;
+  line-height: 1.75;
+}
+h1,
+h2,
+h3 {
+  overflow-wrap: break-word;
+}
+p,
+a,
+button,
+input {
+  overflow-wrap: anywhere;
+}
+img {
+  max-width: 100%;
+}
+.wrap {
+  width: min(90rem, calc(100% - clamp(2rem, 6vw, 6rem)));
+}
+.button {
+  font-size: 1rem;
+  min-height: 3rem;
+  white-space: normal;
+  text-align: center;
+}
+.eyebrow {
+  font-size: 0.9rem;
+  letter-spacing: 0.12em;
+}
+.textLink {
+  font-size: 1rem;
+  white-space: normal;
+}
+.sectionHeading h2 {
+  font-size: clamp(2rem, 4vw, 4rem);
+}
+.sectionHeading > * {
+  min-width: 0;
+}
+.section {
+  padding-block: clamp(3.5rem, 7vw, 6rem);
+}
+@media (max-width: 48rem) {
+  .sectionHeading {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    transition: none !important;
+    animation: none !important;
   }
 }
