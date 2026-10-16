@@ -73,6 +73,35 @@ Abra o endereço informado pelo servidor.
 
 ## Publicação
 
+### CI/CD com GitHub Actions e Vercel
+
+O workflow `.github/workflows/ci.yml` executa `npm ci`, `npm run lint` e
+`npm run build` em pull requests e pushes na `main`. Também permite execução
+manual pela aba Actions. O build inclui a validação de TypeScript e a exportação
+estática. O CI usa Node.js 24 e não precisa de secrets.
+
+Para habilitar o deploy contínuo:
+
+1. Envie estas alterações ao GitHub.
+2. Na Vercel, selecione **Add New → Project** e importe
+   `BigodeMarine/site-de-viagens`, autorizando o acesso ao repositório.
+3. Use o preset **Next.js**, a raiz do repositório como **Root Directory**,
+   Node.js **24.x**, **Install Command** `npm ci` e **Build Command**
+   `npm run build`. Mantenha **Output Directory** no padrão do preset: a
+   integração Next.js reconhece `output: "export"`. Não use `npm start`.
+4. Defina `main` como **Production Branch** e faça o primeiro deploy.
+
+A integração Git da Vercel cria deploys de preview para branches e pull requests
+e atualiza a produção nos pushes da `main`. Não é necessário armazenar
+`VERCEL_TOKEN` no GitHub para esse fluxo. O projeto não exige variáveis de ambiente.
+
+Para exigir o CI antes de integrar alterações, configure uma regra de proteção
+da `main` no GitHub que exija pull request e o check **Lint e build** (disponível
+após a primeira execução). O CI e o deploy da Vercel executam independentemente;
+o workflow não bloqueia sozinho um deploy de um push direto na `main`.
+
+### Outras hospedagens estáticas
+
 Execute `npm run build` e publique o conteúdo de `out/` em uma hospedagem estática que resolva URLs sem extensão, como `/destinos/paris` para `/destinos/paris.html`.
 
 A configuração está em `next.config.ts`:
