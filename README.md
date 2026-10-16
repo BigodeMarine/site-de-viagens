@@ -200,7 +200,21 @@ testes executados pelo workflow de CI nem uma nova medição desta revisão.
 - Busca sem acentos, filtro por experiência, estado vazio e limpeza de filtros testados em navegador.
 - Leitura com texto ampliado a 200% verificada em 1280 px, sem rolagem horizontal.
 
-### Histórico de desempenho
+### Lighthouse mobile após otimização das imagens
+
+Na avaliação do site publicado na Vercel, a pontuação de **Performance no
+Lighthouse mobile passou de 88 para 96**, conforme medição informada pelo
+responsável pelo projeto após o deploy da otimização (`f701c81`).
+
+As melhorias incluem variantes responsivas das imagens geradas no build,
+seleção do tamanho pelo navegador via `srcset` e preload da imagem principal
+com `fetchPriority="high"`. Como referência de tamanho de arquivo, a variante
+de 1024 px da foto do Rio caiu de aproximadamente 484 KB do original para 85 KB.
+
+O LCP informado antes da otimização era de 3,6 s; o novo LCP não foi informado.
+A pontuação pode variar conforme dispositivo, rede e condições da execução.
+
+### Histórico anterior de desempenho
 
 As imagens abaixo pertencem à avaliação anterior registrada no projeto e não representam uma nova medição do visual atualizado.
 
