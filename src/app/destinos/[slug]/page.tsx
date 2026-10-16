@@ -33,6 +33,7 @@ export default async function DestinoDetalhePage({ params }: Props) {
           alt={d.nome}
           fill
           priority
+          fetchPriority="high"
           sizes="100vw"
           style={{ objectFit: "cover" }}
         />

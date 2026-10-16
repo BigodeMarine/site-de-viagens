@@ -12,6 +12,7 @@ export default function HomePage() {
           alt="Pão de Açúcar e bondinho no Rio de Janeiro"
           fill
           priority
+          fetchPriority="high"
           sizes="100vw"
           className={styles.heroImage}
         />

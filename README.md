@@ -36,15 +36,18 @@ As rotas dos destinos originais foram preservadas, incluindo `/destinos/tokio`.
 
 ## Tecnologias
 
-- Next.js 15.5 com App Router
-- React 19.1
+- Next.js 15.5.28 com App Router
+- React e React DOM 19.1.10
 - TypeScript 5
 - CSS Modules e variáveis CSS globais
 - ESLint com configuração do Next.js
 
 ## Executar localmente
 
-Requisitos: Node.js 20 ou superior e npm.
+Requisitos: Node.js 20 ou superior e npm. Use Node.js 24 para manter a mesma
+versão principal do CI e da configuração recomendada para a Vercel.
+O catálogo é local: não há banco de dados, API externa ou variáveis de ambiente
+obrigatórias.
 
 ```sh
 git clone https://github.com/BigodeMarine/site-de-viagens.git
@@ -64,7 +67,7 @@ Abra [http://localhost:3000](http://localhost:3000).
 | `npm run build` | Compila, valida tipos e gera o site estático em `out/` |
 | `npm run lint`  | Executa o ESLint                                       |
 
-O script `npm start` original utiliza `next start`, que não serve a configuração atual de exportação estática. Para visualizar a versão de produção, use um servidor estático:
+O script `npm start` utiliza `next start`, que não serve a configuração atual de exportação estática. Para visualizar a versão de produção, use um servidor estático:
 
 ```sh
 npm run build
@@ -84,7 +87,7 @@ estática. O CI usa Node.js 24 e não precisa de secrets.
 
 Para habilitar o deploy contínuo:
 
-1. Envie estas alterações ao GitHub.
+1. Garanta que a versão desejada esteja na `main` do GitHub.
 2. Na Vercel, selecione **Add New → Project** e importe
    `BigodeMarine/site-de-viagens`, autorizando o acesso ao repositório.
 3. Use o preset **Next.js**, a raiz do repositório como **Root Directory**,
@@ -111,11 +114,22 @@ A configuração está em `next.config.ts`:
 ```ts
 const nextConfig = {
   output: "export",
-  images: { unoptimized: true },
+  images: {
+    loader: "custom",
+    loaderFile: "./src/lib/image-loader.ts",
+    deviceSizes: [480, 768, 1024, 1440, 1920],
+    imageSizes: [],
+  },
 };
 ```
 
-Não é necessário um servidor Next.js em produção. As imagens são servidas diretamente, sem o serviço de otimização de imagens do Next.js. O projeto usa fontes do sistema, evitando o download de fontes do Google durante a compilação.
+Não é necessário um servidor Next.js em produção. Os hooks `predev` e `prebuild`
+executam `scripts/prepare-images.mjs` com Sharp para gerar versões WebP em cinco
+larguras, sem ampliar os originais. O loader estático fornece `srcset` para o
+navegador escolher o tamanho adequado. Os arquivos em `public/images/optimized/`
+são gerados e ignorados pelo Git; os originais são preservados. As imagens
+principais usam preload e `fetchPriority="high"`. O projeto usa fontes do sistema,
+evitando o download de fontes do Google durante a compilação.
 
 ## Organização do código
 
@@ -137,7 +151,7 @@ src/
 └── styles/
     └── globals.css               # Paleta, tipografia e estilos compartilhados
 public/
-└── images/                       # Imagens dos destinos originais
+└── images/                       # Fotos dos oito destinos e relatórios históricos
 ```
 
 ## Adicionar um destino
@@ -146,7 +160,7 @@ Adicione um objeto ao array `destinos` em `src/data/destinos.ts`, seguindo a int
 
 Use uma das categorias existentes para que o destino apareça no filtro correspondente: `Natureza`, `Cultura`, `Família` ou `Praia`. Para adicionar outra categoria, atualize também a lista em `DestinationExplorer.tsx`.
 
-Imagens locais devem ficar em `public/images/` e ser referenciadas como `/images/nome-do-arquivo.webp`. Após alterar o catálogo, execute `npm run build` para gerar a nova página.
+Imagens locais devem ficar em `public/images/` e ser referenciadas como `/images/nome-do-arquivo.webp`. O loader aceita fotos WebP nessa pasta. Após alterar o catálogo, execute `npm run build` para gerar as variantes responsivas e a nova página; se o servidor de desenvolvimento já estiver ativo, reinicie-o para gerar as novas imagens.
 
 ## Referência e imagens
 
@@ -159,7 +173,25 @@ A referência editorial para a atualização é o artigo [Experiências familiar
 - Os símbolos de seta foram removidos de todas as páginas e componentes.
 - Grades, navegação, textos e imagens se adaptam à largura disponível, com colunas únicas em telas pequenas e limites de leitura em monitores grandes.
 
-## Validação da atualização
+## Validação
+
+Para validar alterações localmente, execute:
+
+```sh
+npm run lint
+npm run build
+git diff --check
+```
+
+O CI executa lint e build, incluindo a checagem de tipos. Não há script `npm test`
+nem suíte automatizada de navegador configurada no repositório. Confira
+manualmente a busca, os filtros, a navegação e a responsividade após alterações
+na interface. Um build bem-sucedido não confirma a publicação na Vercel.
+
+### Histórico de validação da interface
+
+Os resultados abaixo foram registrados na atualização visual anterior; não são
+testes executados pelo workflow de CI nem uma nova medição desta revisão.
 
 - `npm run build` concluído com sucesso, incluindo checagem de TypeScript e geração estática.
 - `git diff --check` sem erros.
