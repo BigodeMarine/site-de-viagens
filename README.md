@@ -1,3 +1,5 @@
+https://site-de-viagens-rho.vercel.app
+
 # Portal de Viagens
 
 Portal de inspiração para viagens desenvolvido com Next.js, React e TypeScript. Explore oito destinos, filtre experiências e conheça atrações em páginas individuais.
@@ -180,4 +182,4 @@ Depois:
 
 Na etapa anterior, os dados foram centralizados em `src/data/destinos.ts`, os estilos compartilhados foram organizados em variáveis CSS e as imagens dos destinos originais foram convertidas para WebP.
 
-<p align="center">Refatorado com ☕, Typescript, e um pouco de Férias.</p>  
+<p align="center">Refatorado com ☕, Typescript e um pouco de Férias.</p>  
